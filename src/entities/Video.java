@@ -16,12 +16,19 @@ public class Video extends ElementoMultimediale implements Play {
     @Override
     public void play() {
         for (int i = 0; i < volume; i++) {
-            System.out.println(getTitolo() + "!".repeat(volume) + "*".repeat(luminosita));
+            String risultato = getTitolo();
+            for (int index = 0; index < volume; index++) {
+                risultato += "!";
+            }
+            for (int index1 = 0; index1 < luminosita; index1++) {
+                risultato += "*";
+            }
+            System.out.println(risultato);
         }
     }
 
     @Override
     public void show() {
-        // Video non ha il metodo show()
+
     }
 }

@@ -14,12 +14,16 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play {
     @Override
     public void play() {
         for (int i = 0; i < volume; i++) {
-            System.out.println(getTitolo() + "!".repeat(volume));
+            String risultato = getTitolo();
+            for (int index = 0; index < volume; index++) {
+                risultato += "!";
+            }
+            System.out.println(risultato);
         }
     }
 
     @Override
     public void show() {
-
+       
     }
 }
