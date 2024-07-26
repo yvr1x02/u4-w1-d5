@@ -14,13 +14,6 @@ public class Video extends ElementoMultimediale implements Play {
         this.durata = Math.max(durata, 1);
     }
 
-    public void aumentaLuminosita() {
-        luminosita++;
-    }
-
-    public void diminuisciLuminosita() {
-        if (luminosita > 0) luminosita--;
-    }
 
     @Override
     public void play() {

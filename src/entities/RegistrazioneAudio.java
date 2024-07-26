@@ -3,8 +3,8 @@ package entities;
 import Interfaces.Play;
 
 public class RegistrazioneAudio extends ElementoMultimediale implements Play {
-    private int volume;
-    private int durata;
+    private final int volume;
+    private final int durata;
 
     public RegistrazioneAudio(String titolo, int volume, int durata) {
         super(titolo);
@@ -12,13 +12,6 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play {
         this.durata = Math.max(durata, 1);
     }
 
-    public void abbassaVolume() {
-        if (volume > 0) volume--;
-    }
-
-    public void alzaVolume() {
-        volume++;
-    }
 
     @Override
     public void play() {
