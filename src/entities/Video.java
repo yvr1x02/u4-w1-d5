@@ -3,19 +3,28 @@ package entities;
 import Interfaces.Play;
 
 public class Video extends ElementoMultimediale implements Play {
-    private final int volume;
-    private final int luminosita;
+    private int volume;
+    private int luminosita;
+    private int durata;
 
-    public Video(String titolo, int volume, int luminosita) {
+    public Video(String titolo, int volume, int luminosita, int durata) {
         super(titolo);
         this.volume = Math.max(volume, 0);
         this.luminosita = Math.max(luminosita, 0);
+        this.durata = Math.max(durata, 1);
     }
 
+    public void aumentaLuminosita() {
+        luminosita++;
+    }
+
+    public void diminuisciLuminosita() {
+        if (luminosita > 0) luminosita--;
+    }
 
     @Override
     public void play() {
-        for (int i = 0; i < volume; i++) {
+        for (int i = 0; i < durata; i++) {
             String risultato = getTitolo();
             for (int index = 0; index < volume; index++) {
                 risultato += "!";
